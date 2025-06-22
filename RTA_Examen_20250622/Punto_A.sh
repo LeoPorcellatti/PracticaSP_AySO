@@ -93,4 +93,9 @@ echo "/dev/mapper/vg_datos-lv_multimedia /Multimedia ext4 defaults 0 2" | sudo t
 echo "/dev/mapper/vg_temp-lv_swap none swap sw 0 0" | sudo tee -a /etc/fstab
 echo "/dev/sde1 none swap sw 0 0" | sudo tee -a /etc/fstab 
 
+# Resetear servicio Docker
+echo "***** Reseteando Servicio de Docker *****"
+sudo systemctl restart docker
+sudo systemctl status docker --no-pager
+
 echo "***** Listo *****"
