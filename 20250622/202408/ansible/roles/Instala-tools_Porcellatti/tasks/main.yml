@@ -1,0 +1,22 @@
+---
+# tasks file for Instala-tools_Porcellatti
+
+- name: "Rol: Instala-tools_Porcellatti"
+  debug:
+    msg: "Inicio de tareas dentro del Rol: Instala-tools_Porcellatti"
+
+- name: "Agrego programas solicitados" 
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - htop
+    - tmux
+    - tree
+    - speedtest-cli
+
+- name: "Aviso de exito"
+  debug:
+    msg: "Programas instalados"
+

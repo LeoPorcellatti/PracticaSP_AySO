@@ -1,8 +1,28 @@
 ---
 # tasks file for 2PRecuperatorio
 
- - name: "Rol: 2PRecuperatorio"
-   debug:
-     msg: "Inicio de tareas dentro del Rol: 2PRecuperatorio"
+- name: "Rol: 2PRecuperatorio"
+  debug:
+    msg: "Inicio de tareas dentro del Rol: 2PRecuperatorio"
 
+- name: "Crear directorio tmp/alumno"
+  file:
+    path: /tmp/alumno
+    state: directory
+    mode: '0755'
+
+- name: "Crear archivo datos.txt con datos"
+  copy:
+    dest: /tmp/alumno/datos.txt
+    content: | 
+      Nombre: Leonardo Porcellatti
+      Division: 318
+      Fecha: {{ '%Y-%m-%d' | strftime }}
+      -----------------------------
+      Distribucion: {{ ansible_distribution }}
+      Cantidad de Cores: {{ ansible_processor_vcpus }}
+
+- name: "Aviso de exito"
+  debug:
+    msg: "Archivo creado"
 

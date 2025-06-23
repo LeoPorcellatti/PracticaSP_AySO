@@ -1,0 +1,159 @@
+2025-06-23 04:00:46,081 p=10692 u=LPorcellatti n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2025-06-23 04:00:46,333 p=10692 u=LPorcellatti n=ansible | ERROR! 'name' is a required field for include_role.
+
+The error appears to be in '/home/LPorcellatti/PracticaSP_AySO/20250622/202408/ansible/playbook.yml': line 5, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  tasks:
+    - include_role:
+      ^ here
+
+2025-06-23 04:02:58,694 p=10705 u=LPorcellatti n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2025-06-23 04:02:58,788 p=10705 u=LPorcellatti n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/home/LPorcellatti/PracticaSP_AySO/20250622/202408/ansible/playbook.yml': line 14, column 9, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    - name: "Otra tarea"
+        debug:
+        ^ here
+
+2025-06-23 04:04:00,716 p=10708 u=LPorcellatti n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2025-06-23 04:04:00,827 p=10708 u=LPorcellatti n=ansible | PLAY [testing] ************************************************************************************************************************************
+2025-06-23 04:04:00,836 p=10708 u=LPorcellatti n=ansible | TASK [Gathering Facts] ****************************************************************************************************************************
+2025-06-23 04:04:03,063 p=10708 u=LPorcellatti n=ansible | ok: [127.0.0.1]
+2025-06-23 04:04:03,076 p=10708 u=LPorcellatti n=ansible | TASK [include_role : 2PRecuperatorio] *************************************************************************************************************
+2025-06-23 04:04:03,094 p=10708 u=LPorcellatti n=ansible | ERROR! conflicting action statements: copy, dest
+
+The error appears to be in '/home/LPorcellatti/PracticaSP_AySO/20250622/202408/ansible/roles/2PRecuperatorio/tasks/main.yml': line 14, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: "Crear archivo datos.txt con datos"
+  ^ here
+
+2025-06-23 04:04:03,095 p=10708 u=LPorcellatti n=ansible | PLAY RECAP ****************************************************************************************************************************************
+2025-06-23 04:04:03,095 p=10708 u=LPorcellatti n=ansible | 127.0.0.1                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-06-23 04:12:11,066 p=11040 u=LPorcellatti n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2025-06-23 04:12:11,305 p=11040 u=LPorcellatti n=ansible | PLAY [testing] ************************************************************************************************************************************
+2025-06-23 04:12:11,319 p=11040 u=LPorcellatti n=ansible | TASK [Gathering Facts] ****************************************************************************************************************************
+2025-06-23 04:12:13,177 p=11040 u=LPorcellatti n=ansible | ok: [127.0.0.1]
+2025-06-23 04:12:13,192 p=11040 u=LPorcellatti n=ansible | TASK [include_role : 2PRecuperatorio] *************************************************************************************************************
+2025-06-23 04:12:13,220 p=11040 u=LPorcellatti n=ansible | TASK [2PRecuperatorio : Rol: 2PRecuperatorio] *****************************************************************************************************
+2025-06-23 04:12:13,231 p=11040 u=LPorcellatti n=ansible | ok: [127.0.0.1] => {
+    "msg": "Inicio de tareas dentro del Rol: 2PRecuperatorio"
+}
+2025-06-23 04:12:13,255 p=11040 u=LPorcellatti n=ansible | TASK [2PRecuperatorio : Crear directorio tmp/alumno] **********************************************************************************************
+2025-06-23 04:12:13,576 p=11040 u=LPorcellatti n=ansible | changed: [127.0.0.1]
+2025-06-23 04:12:13,584 p=11040 u=LPorcellatti n=ansible | TASK [2PRecuperatorio : Crear archivo datos.txt con datos] ****************************************************************************************
+2025-06-23 04:12:14,206 p=11040 u=LPorcellatti n=ansible | changed: [127.0.0.1]
+2025-06-23 04:12:14,215 p=11040 u=LPorcellatti n=ansible | TASK [2PRecuperatorio : Aviso de exito] ***********************************************************************************************************
+2025-06-23 04:12:14,227 p=11040 u=LPorcellatti n=ansible | ok: [127.0.0.1] => {
+    "msg": "Archivo creado"
+}
+2025-06-23 04:12:14,236 p=11040 u=LPorcellatti n=ansible | TASK [include_role : Alta_Usuarios_Porcellatti] ***************************************************************************************************
+2025-06-23 04:12:14,273 p=11040 u=LPorcellatti n=ansible | TASK [Alta_Usuarios_Porcellatti : Rol: Alta_Usuarios_Porcellatti] *********************************************************************************
+2025-06-23 04:12:14,286 p=11040 u=LPorcellatti n=ansible | ok: [127.0.0.1] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Porcellatti"
+}
+2025-06-23 04:12:14,294 p=11040 u=LPorcellatti n=ansible | TASK [Alta_Usuarios_Porcellatti : Creo grupos GProfesores y GAlumnos] *****************************************************************************
+2025-06-23 04:12:14,664 p=11040 u=LPorcellatti n=ansible | changed: [127.0.0.1] => (item=GProfesores)
+2025-06-23 04:12:14,887 p=11040 u=LPorcellatti n=ansible | changed: [127.0.0.1] => (item=GAlumnos)
+2025-06-23 04:12:14,894 p=11040 u=LPorcellatti n=ansible | TASK [Alta_Usuarios_Porcellatti : Create a user 'Profesor' with a home directory] *****************************************************************
+2025-06-23 04:12:15,345 p=11040 u=LPorcellatti n=ansible | changed: [127.0.0.1]
+2025-06-23 04:12:15,353 p=11040 u=LPorcellatti n=ansible | TASK [Alta_Usuarios_Porcellatti : Create a user 'Alumno' with a home directory] *******************************************************************
+2025-06-23 04:12:15,614 p=11040 u=LPorcellatti n=ansible | changed: [127.0.0.1]
+2025-06-23 04:12:15,621 p=11040 u=LPorcellatti n=ansible | TASK [Alta_Usuarios_Porcellatti : Aviso de exito] *************************************************************************************************
+2025-06-23 04:12:15,632 p=11040 u=LPorcellatti n=ansible | ok: [127.0.0.1] => {
+    "msg": "Archivo Usuarios y Grupos creados"
+}
+2025-06-23 04:12:15,640 p=11040 u=LPorcellatti n=ansible | TASK [include_role : Sudoers_Porcellatti] *********************************************************************************************************
+2025-06-23 04:12:15,669 p=11040 u=LPorcellatti n=ansible | TASK [Sudoers_Porcellatti : Rol: Sudoers_Porcellatti] *********************************************************************************************
+2025-06-23 04:12:15,679 p=11040 u=LPorcellatti n=ansible | ok: [127.0.0.1] => {
+    "msg": "Inicio de tareas dentro del Rol: Sudoers_Porcellatti"
+}
+2025-06-23 04:12:15,688 p=11040 u=LPorcellatti n=ansible | TASK [Sudoers_Porcellatti : Permitir sudo sin contraseña a grupo GProfesores] *********************************************************************
+2025-06-23 04:12:15,999 p=11040 u=LPorcellatti n=ansible | fatal: [127.0.0.1]: FAILED! => {"changed": false, "msg": "Destination /etc/sudoers.d/gprofesores does not exist !", "rc": 257}
+2025-06-23 04:12:16,000 p=11040 u=LPorcellatti n=ansible | PLAY RECAP ****************************************************************************************************************************************
+2025-06-23 04:12:16,001 p=11040 u=LPorcellatti n=ansible | 127.0.0.1                  : ok=11   changed=5    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-06-23 04:17:35,697 p=11537 u=LPorcellatti n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2025-06-23 04:17:35,808 p=11537 u=LPorcellatti n=ansible | PLAY [testing] ************************************************************************************************************************************
+2025-06-23 04:17:35,817 p=11537 u=LPorcellatti n=ansible | TASK [Gathering Facts] ****************************************************************************************************************************
+2025-06-23 04:17:37,448 p=11537 u=LPorcellatti n=ansible | ok: [127.0.0.1]
+2025-06-23 04:17:37,461 p=11537 u=LPorcellatti n=ansible | TASK [include_role : 2PRecuperatorio] *************************************************************************************************************
+2025-06-23 04:17:37,489 p=11537 u=LPorcellatti n=ansible | TASK [2PRecuperatorio : Rol: 2PRecuperatorio] *****************************************************************************************************
+2025-06-23 04:17:37,502 p=11537 u=LPorcellatti n=ansible | ok: [127.0.0.1] => {
+    "msg": "Inicio de tareas dentro del Rol: 2PRecuperatorio"
+}
+2025-06-23 04:17:37,509 p=11537 u=LPorcellatti n=ansible | TASK [2PRecuperatorio : Crear directorio tmp/alumno] **********************************************************************************************
+2025-06-23 04:17:37,820 p=11537 u=LPorcellatti n=ansible | ok: [127.0.0.1]
+2025-06-23 04:17:37,829 p=11537 u=LPorcellatti n=ansible | TASK [2PRecuperatorio : Crear archivo datos.txt con datos] ****************************************************************************************
+2025-06-23 04:17:38,439 p=11537 u=LPorcellatti n=ansible | ok: [127.0.0.1]
+2025-06-23 04:17:38,446 p=11537 u=LPorcellatti n=ansible | TASK [2PRecuperatorio : Aviso de exito] ***********************************************************************************************************
+2025-06-23 04:17:38,456 p=11537 u=LPorcellatti n=ansible | ok: [127.0.0.1] => {
+    "msg": "Archivo creado"
+}
+2025-06-23 04:17:38,464 p=11537 u=LPorcellatti n=ansible | TASK [include_role : Alta_Usuarios_Porcellatti] ***************************************************************************************************
+2025-06-23 04:17:38,493 p=11537 u=LPorcellatti n=ansible | TASK [Alta_Usuarios_Porcellatti : Rol: Alta_Usuarios_Porcellatti] *********************************************************************************
+2025-06-23 04:17:38,504 p=11537 u=LPorcellatti n=ansible | ok: [127.0.0.1] => {
+    "msg": "Inicio de tareas dentro del Rol: Alta_Usuarios_Porcellatti"
+}
+2025-06-23 04:17:38,512 p=11537 u=LPorcellatti n=ansible | TASK [Alta_Usuarios_Porcellatti : Creo grupos GProfesores y GAlumnos] *****************************************************************************
+2025-06-23 04:17:38,827 p=11537 u=LPorcellatti n=ansible | ok: [127.0.0.1] => (item=GProfesores)
+2025-06-23 04:17:39,032 p=11537 u=LPorcellatti n=ansible | ok: [127.0.0.1] => (item=GAlumnos)
+2025-06-23 04:17:39,039 p=11537 u=LPorcellatti n=ansible | TASK [Alta_Usuarios_Porcellatti : Create a user 'Profesor' with a home directory] *****************************************************************
+2025-06-23 04:17:39,390 p=11537 u=LPorcellatti n=ansible | ok: [127.0.0.1]
+2025-06-23 04:17:39,397 p=11537 u=LPorcellatti n=ansible | TASK [Alta_Usuarios_Porcellatti : Create a user 'Alumno' with a home directory] *******************************************************************
+2025-06-23 04:17:39,640 p=11537 u=LPorcellatti n=ansible | ok: [127.0.0.1]
+2025-06-23 04:17:39,647 p=11537 u=LPorcellatti n=ansible | TASK [Alta_Usuarios_Porcellatti : Aviso de exito] *************************************************************************************************
+2025-06-23 04:17:39,658 p=11537 u=LPorcellatti n=ansible | ok: [127.0.0.1] => {
+    "msg": "Archivo Usuarios y Grupos creados"
+}
+2025-06-23 04:17:39,665 p=11537 u=LPorcellatti n=ansible | TASK [include_role : Sudoers_Porcellatti] *********************************************************************************************************
+2025-06-23 04:17:39,694 p=11537 u=LPorcellatti n=ansible | TASK [Sudoers_Porcellatti : Rol: Sudoers_Porcellatti] *********************************************************************************************
+2025-06-23 04:17:39,706 p=11537 u=LPorcellatti n=ansible | ok: [127.0.0.1] => {
+    "msg": "Inicio de tareas dentro del Rol: Sudoers_Porcellatti"
+}
+2025-06-23 04:17:39,713 p=11537 u=LPorcellatti n=ansible | TASK [Sudoers_Porcellatti : Crear archivo /etc/sudoers.d/gprofesores si no existe] ****************************************************************
+2025-06-23 04:17:39,930 p=11537 u=LPorcellatti n=ansible | changed: [127.0.0.1]
+2025-06-23 04:17:39,937 p=11537 u=LPorcellatti n=ansible | TASK [Sudoers_Porcellatti : Permitir sudo sin contraseña a grupo GProfesores] *********************************************************************
+2025-06-23 04:17:40,286 p=11537 u=LPorcellatti n=ansible | changed: [127.0.0.1]
+2025-06-23 04:17:40,293 p=11537 u=LPorcellatti n=ansible | TASK [Sudoers_Porcellatti : Aviso de exito] *******************************************************************************************************
+2025-06-23 04:17:40,304 p=11537 u=LPorcellatti n=ansible | ok: [127.0.0.1] => {
+    "msg": "Sudoers modificado"
+}
+2025-06-23 04:17:40,312 p=11537 u=LPorcellatti n=ansible | TASK [include_role : Instala-tools_Porcellatti] ***************************************************************************************************
+2025-06-23 04:17:40,341 p=11537 u=LPorcellatti n=ansible | TASK [Instala-tools_Porcellatti : Rol: Instala-tools_Porcellatti] *********************************************************************************
+2025-06-23 04:17:40,353 p=11537 u=LPorcellatti n=ansible | ok: [127.0.0.1] => {
+    "msg": "Inicio de tareas dentro del Rol: Instala-tools_Porcellatti"
+}
+2025-06-23 04:17:40,360 p=11537 u=LPorcellatti n=ansible | TASK [Instala-tools_Porcellatti : Agrego programas solicitados] ***********************************************************************************
+2025-06-23 04:17:41,462 p=11537 u=LPorcellatti n=ansible | ok: [127.0.0.1] => (item=htop)
+2025-06-23 04:17:42,359 p=11537 u=LPorcellatti n=ansible | ok: [127.0.0.1] => (item=tmux)
+2025-06-23 04:17:43,220 p=11537 u=LPorcellatti n=ansible | ok: [127.0.0.1] => (item=tree)
+2025-06-23 04:17:49,778 p=11537 u=LPorcellatti n=ansible | changed: [127.0.0.1] => (item=speedtest-cli)
+2025-06-23 04:17:49,806 p=11537 u=LPorcellatti n=ansible | TASK [Instala-tools_Porcellatti : Aviso de exito] *************************************************************************************************
+2025-06-23 04:17:49,827 p=11537 u=LPorcellatti n=ansible | ok: [127.0.0.1] => {
+    "msg": "Programas instalados"
+}
+2025-06-23 04:17:49,838 p=11537 u=LPorcellatti n=ansible | TASK [Otra tarea] *********************************************************************************************************************************
+2025-06-23 04:17:49,855 p=11537 u=LPorcellatti n=ansible | ok: [127.0.0.1] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2025-06-23 04:17:49,875 p=11537 u=LPorcellatti n=ansible | PLAY RECAP ****************************************************************************************************************************************
+2025-06-23 04:17:49,875 p=11537 u=LPorcellatti n=ansible | 127.0.0.1                  : ok=18   changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

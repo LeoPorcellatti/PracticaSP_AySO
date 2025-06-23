@@ -1,11 +1,15 @@
 ---
-- hosts: all
-
+- hosts: testing
+  become: true
   tasks:
     - include_role:
         name: 2PRecuperatorio
-    
+    - include_role:
+        name: Alta_Usuarios_Porcellatti
+    - include_role:
+        name: Sudoers_Porcellatti
+    - include_role:
+        name: Instala-tools_Porcellatti
     - name: "Otra tarea"
       debug:
         msg: "Despues de la ejecucion del rol"
-
